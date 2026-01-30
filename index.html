@@ -299,41 +299,67 @@
         </section>
 
         <section class="py-24 px-6 border-b border-border bg-void">
-    <div class="max-w-3xl mx-auto">
-        <h2 class="text-2xl font-bold tracking-tight mb-12 flex items-center gap-3">
-            <span class="text-gray-600">//</span> KNOWLEDGE_BASE
-        </h2>
+            <div class="max-w-3xl mx-auto">
+                <h2 class="text-2xl font-bold tracking-tight mb-12 flex items-center gap-3">
+                    <span class="text-gray-600">//</span> KNOWLEDGE_BASE
+                </h2>
 
-        <div class="space-y-4">
-            <details class="group border border-border bg-panel open:bg-white/[0.02] transition-colors">
-                <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
-                    <span class="font-mono text-xs uppercase tracking-wide group-hover:text-white transition-colors">01. Как формируется стоимость?</span>
-                    <span class="text-gray-500 transform group-open:rotate-45 transition-transform duration-300">+</span>
-                </summary>
-                <div class="px-6 pb-6 text-sm text-gray-400 leading-relaxed border-t border-border/50 pt-4">
-                    Мы используем систему Time & Materials или Fix Price. Для точной оценки мы проводим этап Discovery. Бюджет фиксируется в договоре и не меняется без доп. соглашений.
-                </div>
-            </details>
+                <div class="space-y-4" id="faq-container">
+                    <div class="faq-item group border border-border bg-panel overflow-hidden transition-all duration-500 hover:border-gray-700">
+                        <button class="faq-trigger w-full flex items-center justify-between p-6 cursor-pointer text-left focus:outline-none">
+                            <span class="font-mono text-xs uppercase tracking-wide group-hover:text-white transition-colors">01. Как формируется стоимость?</span>
+                            <div class="relative w-4 h-4">
+                                <span class="absolute top-1/2 left-0 w-full h-[1px] bg-gray-500 transform -translate-y-1/2 transition-transform duration-300 icon-h"></span>
+                                <span class="absolute top-0 left-1/2 h-full w-[1px] bg-gray-500 transform -translate-x-1/2 transition-transform duration-300 icon-v"></span>
+                            </div>
+                        </button>
+                        
+                        <div class="faq-content grid grid-rows-[0fr] transition-[grid-template-rows] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]">
+                            <div class="overflow-hidden">
+                                <div class="px-6 pb-6 text-sm text-gray-400 leading-relaxed border-t border-border/50 pt-4 inner-text opacity-0 translate-y-4 transition-all duration-500 delay-100">
+                                    Мы используем систему Time & Materials или Fix Price. Для точной оценки мы проводим этап Discovery (Аудит). Бюджет фиксируется в договоре и не меняется без дополнительных соглашений.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="absolute top-0 left-0 w-[2px] h-0 bg-white transition-all duration-500 active-line"></div>
+                    </div>
 
-            <details class="group border border-border bg-panel open:bg-white/[0.02] transition-colors">
-                <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
-                    <span class="font-mono text-xs uppercase tracking-wide group-hover:text-white transition-colors">02. Предоставляете ли вы дизайн?</span>
-                    <span class="text-gray-500 transform group-open:rotate-45 transition-transform duration-300">+</span>
-                </summary>
-                <div class="px-6 pb-6 text-sm text-gray-400 leading-relaxed border-t border-border/50 pt-4">
-                    Да, у нас сильный отдел UI/UX. Мы создаем дизайн-системы, ориентированные на конверсию и эстетику стиля LayerZero/Industrial.
-                </div>
-            </details>
+                    <div class="faq-item group border border-border bg-panel overflow-hidden transition-all duration-500 hover:border-gray-700">
+                        <button class="faq-trigger w-full flex items-center justify-between p-6 cursor-pointer text-left focus:outline-none">
+                            <span class="font-mono text-xs uppercase tracking-wide group-hover:text-white transition-colors">02. Предоставляете ли вы дизайн?</span>
+                            <div class="relative w-4 h-4">
+                                <span class="absolute top-1/2 left-0 w-full h-[1px] bg-gray-500 transform -translate-y-1/2 transition-transform duration-300 icon-h"></span>
+                                <span class="absolute top-0 left-1/2 h-full w-[1px] bg-gray-500 transform -translate-x-1/2 transition-transform duration-300 icon-v"></span>
+                            </div>
+                        </button>
+                        <div class="faq-content grid grid-rows-[0fr] transition-[grid-template-rows] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]">
+                            <div class="overflow-hidden">
+                                <div class="px-6 pb-6 text-sm text-gray-400 leading-relaxed border-t border-border/50 pt-4 inner-text opacity-0 translate-y-4 transition-all duration-500 delay-100">
+                                    Да, у нас сильный отдел Product Design. Мы создаем не просто красивые картинки, а дизайн-системы, ориентированные на метрики, в стиле Industrial/Minimalism.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="absolute top-0 left-0 w-[2px] h-0 bg-white transition-all duration-500 active-line"></div>
+                    </div>
 
-            <details class="group border border-border bg-panel open:bg-white/[0.02] transition-colors">
-                <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
-                    <span class="font-mono text-xs uppercase tracking-wide group-hover:text-white transition-colors">03. Какой стек вы используете?</span>
-                    <span class="text-gray-500 transform group-open:rotate-45 transition-transform duration-300">+</span>
-                </summary>
-                <div class="px-6 pb-6 text-sm text-gray-400 leading-relaxed border-t border-border/50 pt-4">
-                    Основной стек: Next.js (React), TypeScript, Node.js, PostgreSQL. Для Web3 проектов используем Solidity и Wagmi.
-                </div>
-                    </details>
+                    <div class="faq-item group border border-border bg-panel overflow-hidden transition-all duration-500 hover:border-gray-700">
+                        <button class="faq-trigger w-full flex items-center justify-between p-6 cursor-pointer text-left focus:outline-none">
+                            <span class="font-mono text-xs uppercase tracking-wide group-hover:text-white transition-colors">03. Какой стек вы используете?</span>
+                            <div class="relative w-4 h-4">
+                                <span class="absolute top-1/2 left-0 w-full h-[1px] bg-gray-500 transform -translate-y-1/2 transition-transform duration-300 icon-h"></span>
+                                <span class="absolute top-0 left-1/2 h-full w-[1px] bg-gray-500 transform -translate-x-1/2 transition-transform duration-300 icon-v"></span>
+                            </div>
+                        </button>
+                        <div class="faq-content grid grid-rows-[0fr] transition-[grid-template-rows] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]">
+                            <div class="overflow-hidden">
+                                <div class="px-6 pb-6 text-sm text-gray-400 leading-relaxed border-t border-border/50 pt-4 inner-text opacity-0 translate-y-4 transition-all duration-500 delay-100">
+                                    Наш Core-stack: React (Next.js) для фронтенда, Node.js или Go для бэкенда. Для баз данных — PostgreSQL. Для Web3 задач пишем смарт-контракты на Solidity.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="absolute top-0 left-0 w-[2px] h-0 bg-white transition-all duration-500 active-line"></div>
+                    </div>
                 </div>
             </div>
         </section>
