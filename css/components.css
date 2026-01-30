@@ -13,3 +13,20 @@
     color: white;
     box-shadow: 0 0 15px rgba(59, 130, 246, 0.5);
 }
+
+/* Утилита для черно-белого режима */
+.grayscale {
+    filter: grayscale(100%);
+}
+
+.group:hover .grayscale-0 {
+    filter: grayscale(0%);
+}
+
+/* Убираем стандартный треугольник у details/summary */
+details > summary {
+  list-style: none;
+}
+details > summary::-webkit-details-marker {
+  display: none;
+}
