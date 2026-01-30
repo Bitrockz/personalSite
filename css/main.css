@@ -43,3 +43,34 @@ body {
 html {
     scroll-behavior: smooth;
 }
+
+/* FAQ ANIMATION STATES */
+
+/* Когда блок открыт, меняем высоту сетки на 1fr (полная высота) */
+.faq-item.is-open .faq-content {
+    grid-template-rows: 1fr;
+}
+
+/* Анимация текста внутри: он всплывает и становится видимым */
+.faq-item.is-open .inner-text {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Вращение иконки плюса в минус (или крестик) */
+.faq-item.is-open .icon-v {
+    transform: translate(-50%, -50%) rotate(90deg); /* Вертикальная палка ложится горизонтально */
+    opacity: 0; /* Или можно оставить крестиком: rotate(90deg) без opacity */
+}
+/* Если хочешь крестик (x), убери opacity: 0 выше и сделай rotate(45deg) для обоих */
+
+/* Линия слева вырастает на всю высоту */
+.faq-item.is-open .active-line {
+    height: 100%;
+}
+
+/* Легкая подсветка фона при открытии */
+.faq-item.is-open {
+    background-color: rgba(255, 255, 255, 0.03);
+    border-color: rgba(255, 255, 255, 0.2);
+}
