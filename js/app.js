@@ -1,25 +1,41 @@
 import { initGrid } from './modules/grid-bg.js';
 import { initScrambler } from './modules/scrambler.js';
+import { initPreloader, initMagneticButtons } from './modules/ui.js';
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Запуск канвас фона
+    // 1. Запускаем загрузочный экран
+    initPreloader();
+
+    // 2. Фон и эффекты текста (из предыдущего ответа)
     initGrid();
     
-    // Запуск "дешифровщика" текста
-    initScrambler();
+    // Запускаем дешифровку с задержкой, чтобы видно было после прелоадера
+    setTimeout(() => {
+        initScrambler();
+    }, 2000);
 
-    // Логика курсора
+    // 3. UI улучшения
+    initMagneticButtons();
+
+    // 4. Логика кастомного курсора
     const cursor = document.getElementById('cursor');
-    document.addEventListener('mousemove', (e) => {
-        cursor.style.left = e.clientX + 'px';
-        cursor.style.top = e.clientY + 'px';
-    });
-
-    // Увеличение курсора при наведении на ссылки
-    document.querySelectorAll('a, button').forEach(el => {
-        el.addEventListener('mouseenter', () => cursor.classList.add('scale-150', 'bg-white/20'));
-        el.addEventListener('mouseleave', () => cursor.classList.remove('scale-150', 'bg-white/20'));
-    });
     
-    console.log("%c SYSTEM READY ", "background: #3b82f6; color: #fff; padding: 4px; font-weight: bold;");
+    if (window.matchMedia("(min-width: 768px)").matches) {
+        document.addEventListener('mousemove', (e) => {
+            // Используем transform для лучшей производительности
+            cursor.style.transform = `translate(${e.clientX - 6}px, ${e.clientY - 6}px)`;
+        });
+
+        // Эффект при наведении на ссылки
+        document.querySelectorAll('a, button, input, textarea').forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                cursor.classList.add('scale-[3]', 'mix-blend-difference', 'bg-white');
+            });
+            el.addEventListener('mouseleave', () => {
+                cursor.classList.remove('scale-[3]', 'mix-blend-difference', 'bg-white');
+            });
+        });
+    }
+
+    console.log("%c NEXUS SYSTEMS ONLINE ", "background: #fff; color: #000; padding: 4px; font-weight: bold;");
 });
